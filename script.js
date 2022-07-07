@@ -1,9 +1,10 @@
 const idAdvice = document.querySelector('.title')
 const advice = document.querySelector('.text')
 const goBtn = document.querySelector('.btn')
+const API = 'https://api.adviceslip.com/advice'
  
-function getAPI() {
-  fetch('https://api.adviceslip.com/advice')
+function getAPI(API) {
+  fetch(API)
   .then((response) => {
     return response.json();
   })
@@ -14,8 +15,8 @@ function getAPI() {
   })
 }
 
-getAPI();
+getAPI(API);
 
 goBtn.addEventListener("click", function() {
-  getAPI();
+  getAPI(API);
 })
